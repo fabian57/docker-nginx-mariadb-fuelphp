@@ -9,12 +9,10 @@ services:
             - ./app/public:/var/www/html/public:ro
             - ./config/nginx/nginx.conf:/etc/nginx/nginx.conf:ro
             - ./config/nginx/conf.d/default.conf:/etc/nginx/conf.d/default.conf:ro
-        links:
-            - phpfpm
     phpfpm:
         build:
             context: .
-            dockerfile: docker_builds/Dockerfile.phpfpm-alpine
+            dockerfile: docker_builds/Dockerfile.phpfpm
         ports:
             - "9000:9000"
         environment:
@@ -24,8 +22,6 @@ services:
             - DB_PASS=root
         volumes:
             - ./app:/var/www/html:rw
-        links:
-            - mysql
     mysql:
         image: mariadb:10.3
         environment:
