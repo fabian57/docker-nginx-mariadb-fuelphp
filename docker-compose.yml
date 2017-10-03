@@ -14,7 +14,7 @@ services:
     phpfpm:
         build:
             context: .
-            dockerfile: docker_builds/Dockerfile.phpfpm
+            dockerfile: docker_builds/Dockerfile.phpfpm-alpine
         ports:
             - "9000:9000"
         environment:
