@@ -31,6 +31,6 @@ docker-compose down
 
 Hope this helps and you can enjoy a dockerized LEMP app without going through too much trouble.
 
-*Note: I still have to fix the alpine version since MariaDB does not seem to work with it. So stick with the slightly heavier debian version.*
+*Note: Not running in deamon mode seems to shut down MariaDB, so don't forget to add the -d flag* 
 
 *This blueprint is based on the crashcourse at https://github.com/ucfopen/fuelphp-crash-course-docker.*
